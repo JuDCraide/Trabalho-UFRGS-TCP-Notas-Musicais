@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>imagens/book-3510326_1920.jpg</file>
+        <file>imagens/Notas MusicaisNotas Musicais.png</file>
+        <file>imagens/Notas MusicaisNotas Musicais2.png</file>
+        <file>imagens/TitleNotas MusicaisNotas Musicais.png</file>
+    </qresource>
+</RCC>
