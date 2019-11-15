@@ -22,6 +22,8 @@ private slots:
 
     void on_botaoArquivo_clicked();
 
+    void on_gerarMIDI_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
