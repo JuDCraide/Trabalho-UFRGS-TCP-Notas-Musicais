@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 
 #include <QDebug>
+#include <QFile>
+#include <QString>
+#include <QTextStream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -38,4 +41,22 @@ void MainWindow::on_botaoMusica_clicked()
 void MainWindow::on_botaoAjuda_clicked()
 {
     qDebug() << "ajudaa";
+
+}
+
+void readFile(QString fileName){
+    QFile file(fileName);
+
+    file.open(QFile::ReadOnly | QFile::Text);
+
+    QTextStream in(&file);
+    QString text = in.readAll();
+    qDebug() << text;
+    file.close();
+}
+
+void MainWindow::on_botaoArquivo_clicked()
+{
+    QString file = "D:/cachorro.txt";
+    readFile(file);
 }

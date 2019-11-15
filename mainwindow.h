@@ -22,6 +22,8 @@ private slots:
 
     void on_botaoAjuda_clicked();
 
+    void on_botaoArquivo_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
