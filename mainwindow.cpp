@@ -5,6 +5,9 @@
 #include <QFile>
 #include <QString>
 #include <QTextStream>
+#include <QtCore>
+#include <QtGui>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -41,6 +44,7 @@ void MainWindow::on_botaoMusica_clicked()
 void MainWindow::on_botaoAjuda_clicked()
 {
     qDebug() << "ajudaa";
+    QMessageBox::information(this,"Instruções","Aq vão as instruções");
 
 }
 
@@ -57,6 +61,7 @@ void readFile(QString fileName){
 
 void MainWindow::on_botaoArquivo_clicked()
 {
-    QString file = "D:/cachorro.txt";
+    QString file = "D:/cachorro.txt ";
     readFile(file);
 }
+

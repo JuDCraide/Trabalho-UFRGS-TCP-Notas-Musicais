@@ -16,8 +16,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
-
     void on_botaoMusica_clicked();
 
     void on_botaoAjuda_clicked();
