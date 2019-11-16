@@ -8,6 +8,7 @@
 #include <QtCore>
 #include <QtGui>
 #include <QMessageBox>
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -38,8 +39,20 @@ void MainWindow::on_botaoMusica_clicked()
    // ui->label->setText("alo coco");
     QString texto = ui->txtOriginal->toPlainText();
     qDebug() << texto;
+    if(texto==""){
+         QMessageBox::critical(this,"Não foi possível tocar a música","O campo de texto não pode ser deixado vazio.");
+        return;
+    }
     //qDebug() << ui->selecionarTimbre->currentText();
     qDebug() << ui->selecionarTimbre->currentIndex();
+    if(ui->gerarMIDI->isChecked()){
+        QString arquivo = ui->nomeArquivo->text();
+        qDebug() << arquivo;
+        if(arquivo==""){
+            QMessageBox::critical(this,"Não foi possível tocar a música","O nome do arquivo não pode ser deixado vazio,\nenquanto a opção gerar MIDI estiver selecionada");
+            return;
+        }
+    }
 }
 
 
@@ -51,21 +64,27 @@ void MainWindow::on_botaoAjuda_clicked()
 
 }
 
-void readFile(QString fileName){
+QString readFile(QString fileName){
     QFile file(fileName);
 
-    file.open(QFile::ReadOnly | QFile::Text);
-
+    if(!file.open(QFile::ReadOnly | QFile::Text)){
+        qDebug()<<"erro";
+    }
     QTextStream in(&file);
+
     QString text = in.readAll();
-    qDebug() << text;
+    //qDebug() << text;
     file.close();
+    return text;
 }
 
 void MainWindow::on_botaoArquivo_clicked()
 {
-    QString file = "D:/cachorro.txt ";
-    readFile(file);
+    //QString file = "D:/cachorro.txt";
+    const QString filtro="Arquivos de Texto (*.txt) ;; Todos Arquivos (*.*)";
+    QString file = QFileDialog::getOpenFileName(this,"Abrir Arquivoss","C://",filtro);
+    QString txtFile = readFile(file);
+    ui->txtOriginal->setPlainText(txtFile);
 }
 
 
@@ -74,8 +93,10 @@ void MainWindow::on_gerarMIDI_clicked()
     if(ui->gerarMIDI->isChecked()){
         ui->nomeArquivo->show();
         ui->lableDigiteNome->show();
+        ui->botaoMusica->setText("Gerar e Tocar Música");
     } else{
         ui->nomeArquivo->hide();
         ui->lableDigiteNome->hide();
+        ui->botaoMusica->setText("Tocar Música");
     }
 }
