@@ -209,7 +209,7 @@ border-radius: 20px;
 font-family: Muli;
 font-style: normal;
 font-weight: 600;
-font-size: 24px;
+font-size: 16px;
 line-height: 20px;
 letter-spacing: 0.2px;
 
@@ -274,7 +274,7 @@ letter-spacing: 0.2px;
 color: #FFFFFF;</string>
           </property>
           <property name="text">
-           <string>Gerar e tocar música</string>
+           <string>Tocar música</string>
           </property>
          </widget>
         </item>
@@ -373,7 +373,7 @@ color: #FFFFFF;</string>
         <rect>
          <x>10</x>
          <y>340</y>
-         <width>751</width>
+         <width>781</width>
          <height>31</height>
         </rect>
        </property>
@@ -429,7 +429,7 @@ color: #FFFFFF;</string>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>10</width>
+            <width>15</width>
             <height>10</height>
            </size>
           </property>
