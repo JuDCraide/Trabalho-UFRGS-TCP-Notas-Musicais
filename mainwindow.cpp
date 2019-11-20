@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "Player.h"
 
 #include <bits/stdc++.h>
 #include <QDebug>
@@ -36,24 +37,24 @@ void MainWindow::inicializaTimbres(){
 }
 
 void MainWindow::on_botaoMusica_clicked(){
-
-    QString texto = ui->txtOriginal->toPlainText();
-    qDebug() << texto;
-    std::cout<<texto.toStdString();
+    Player player;
+    std::string texto = ui->txtOriginal->toPlainText().toStdString();
+    std::cout<<texto;
     if(texto==VAZIO){
         QMessageBox::critical(this,"Não foi possível tocar a música","O campo de texto não pode ser deixado vazio.");
         return;
     }
     int indexTimbre = ui->selecionarTimbre->currentIndex();
     qDebug() << indexTimbre;
+    player.prepararPlayer(texto,indexTimbre);
+    player.tocarMusica();
     if(ui->gerarMIDI->isChecked()){
-        QString arquivo = ui->nomeArquivo->text();
+        std::string arquivo = ui->nomeArquivo->text().toStdString();
         if(arquivo==VAZIO){
             QMessageBox::critical(this,"Não foi possível tocar a música","O nome do arquivo não pode ser deixado vazio,\nenquanto a opção gerar MIDI estiver selecionada");
             return;
         }else{
-            //chamar gerar MIDI
-            return;
+            player.gerarMidi(arquivo);
         }
     }
 }

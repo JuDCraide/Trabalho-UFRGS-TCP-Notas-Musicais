@@ -16,10 +16,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Componente.cpp \
+    Instrumento.cpp \
+    Musica.cpp \
+    Nota.cpp \
+    Oitava.cpp \
+    Player.cpp \
+    Texto.cpp \
+    Volume.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    Componente.h \
+    Instrumento.h \
+    Musica.h \
+    Nota.h \
+    Oitava.h \
+    Player.h \
+    Texto.h \
+    Volume.h \
     mainwindow.h
 
 FORMS += \
