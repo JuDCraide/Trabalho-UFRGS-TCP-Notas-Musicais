@@ -42,9 +42,7 @@ border-image: url(:/img/imagens/Notas MusicaisNotas Musicais4.png) 0 0 0 0 stret
     </sizepolicy>
    </property>
    <property name="styleSheet">
-    <string notr="true">/*
-background-image: url(:/img/imagens/Notas MusicaisNotas Musicais.png);
-/*.QWidget{*/</string>
+    <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="2" column="1">
@@ -158,7 +156,6 @@ background-image: url(:/img/imagens/Notas MusicaisNotas Musicais.png);
           </property>
           <property name="styleSheet">
            <string notr="true">background: #D88136;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 
 font-family: Muli;
@@ -166,7 +163,6 @@ font-style: normal;
 font-weight: 600;
 font-size: 24px;
 line-height: 30px;
-letter-spacing: 0.2px;
 
 color: #FFFFFF;</string>
           </property>
@@ -202,8 +198,6 @@ color: #FFFFFF;</string>
           <property name="styleSheet">
            <string notr="true">background: #FFFFFF;
 border: 1px solid #DFE0EB;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 
 font-family: Muli;
@@ -211,7 +205,6 @@ font-style: normal;
 font-weight: 600;
 font-size: 16px;
 line-height: 20px;
-letter-spacing: 0.2px;
 
 color: #6B6DA2;</string>
           </property>
@@ -261,7 +254,6 @@ color: #6B6DA2;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">background: #D88136;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 
 font-family: Muli;
@@ -269,7 +261,6 @@ font-style: normal;
 font-weight: 600;
 font-size: 24px;
 line-height: 30px;
-letter-spacing: 0.2px;
 
 color: #FFFFFF;</string>
           </property>
@@ -307,8 +298,6 @@ color: #FFFFFF;</string>
        <property name="styleSheet">
         <string notr="true">background: #FFFFFF;
 border: 1px solid #DFE0EB;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 padding: 10px;
 
@@ -317,7 +306,7 @@ font-style: normal;
 font-weight: 600;
 font-size: 24px;
 line-height: 20px;
-letter-spacing: 0.2px;</string>
+</string>
        </property>
        <property name="placeholderText">
         <string>Insira seu texto aqui...</string>
@@ -352,7 +341,6 @@ letter-spacing: 0.2px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background: #D88136;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 
 font-family: Muli;
@@ -360,7 +348,6 @@ font-style: normal;
 font-weight: 600;
 font-size: 24px;
 line-height: 30px;
-letter-spacing: 0.2px;
 
 color: #FFFFFF;</string>
        </property>
@@ -399,9 +386,7 @@ color: #FFFFFF;</string>
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true">
-background: #D88136;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+           <string notr="true">background: #D88136;
 border-radius: 10px;
 
 font-family: Muli;
@@ -409,8 +394,6 @@ font-style: normal;
 font-weight: 600;
 font-size: 12pt;
 line-height: 30px;
-letter-spacing: 0.2px;
-
 
 color: #FFFFFF;</string>
           </property>
@@ -898,22 +881,13 @@ color: #FFFFFF;</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">
-font-family: Muli;
+           <string notr="true">font-family: Muli;
 font-style: normal;
 font-weight: 600;
 font-size: 11pt;
 line-height: 30px;
-letter-spacing: 0.2px;
-text-shadow: 2px 2px black;
 
 color: #FFFFFF;
-
-/**
-background: #D88136;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-**/
 </string>
           </property>
           <property name="frameShape">
@@ -938,8 +912,6 @@ border-radius: 10px;
           <property name="styleSheet">
            <string notr="true">background: #FFFFFF;
 border: 1px solid #DFE0EB;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 
 font-family: Muli;
@@ -947,7 +919,6 @@ font-style: normal !important;
 font-weight: 600;
 font-size: 11pt;
 line-height: 20px;
-letter-spacing: 0.2px;
 
 color: #6B6DA2;</string>
           </property>

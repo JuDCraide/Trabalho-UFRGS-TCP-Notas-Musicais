@@ -24,6 +24,12 @@ private slots:
 
     void on_gerarMIDI_clicked();
 
+    void inicializaTimbres();
+
+    void hideArquivo();
+
+    void showArquivo();
+
 private:
     Ui::MainWindow *ui;
 };
