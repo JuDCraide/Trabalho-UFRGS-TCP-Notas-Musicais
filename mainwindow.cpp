@@ -39,19 +39,21 @@ void MainWindow::inicializaTimbres(){
 void MainWindow::on_botaoMusica_clicked(){
     Player player;
     std::string texto = ui->txtOriginal->toPlainText().toStdString();
-    std::cout<<texto;
+    //std::cout<<texto;
     if(texto==VAZIO){
         QMessageBox::critical(this,"Não foi possível tocar a música","O campo de texto não pode ser deixado vazio.");
         return;
     }
     int indexTimbre = ui->selecionarTimbre->currentIndex();
-    qDebug() << indexTimbre;
+    //qDebug() << indexTimbre;
     player.prepararPlayer(texto,indexTimbre);
+    qDebug()<<"preparou";
     player.tocarMusica();
+    qDebug()<<"tocou";
     if(ui->gerarMIDI->isChecked()){
         std::string arquivo = ui->nomeArquivo->text().toStdString();
         if(arquivo==VAZIO){
-            QMessageBox::critical(this,"Não foi possível tocar a música","O nome do arquivo não pode ser deixado vazio,\nenquanto a opção gerar MIDI estiver selecionada");
+            QMessageBox::critical(this,"Não foi possível tocar a música","O nome do arquivo não pode ser deixado vazio,\nquando a opção de gerar MIDI estiver selecionada");
             return;
         }else{
             player.gerarMidi(arquivo);
@@ -60,8 +62,7 @@ void MainWindow::on_botaoMusica_clicked(){
 }
 
 void MainWindow::on_botaoAjuda_clicked(){
-    qDebug() << "ajudaa";
-    QMessageBox::information(this,"Instruções","Aq vão as instruções");
+    QMessageBox::information(this,"Instruções","Para iniciar o uso digite um texto ou abra um arquivo\nEm seguida escolha um timbre inicial, ou deixe no piano padrão\nCaso deseje salvar a música clique no checkbox\nAssim, será possível escolher um nome para o seu arquivo\nEm seguida aperte o botão para Tocar/Gerar e Tocar a música e PRONTO\nAprecie sua música gerada a partir de texto");
 }
 
 QString readFile(QString fileName){

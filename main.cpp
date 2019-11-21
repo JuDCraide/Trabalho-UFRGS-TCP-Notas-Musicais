@@ -4,12 +4,10 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.setWindowTitle("Musicando");
-    //QIcon icone(":/img/imagens/favicon_created_by_logaster.ico");
-    w.setWindowIcon(QIcon(":/img/imagens/favicon_created_by_logaster.ico"));
-    w.showMaximized();
-    //w.showFullScreen();
-    return a.exec();
+    QApplication app(argc, argv);
+    MainWindow window;
+    window.setWindowTitle("Musicando");
+    window.setWindowIcon(QIcon(":/img/imagens/favicon_created_by_logaster.ico"));
+    window.showMaximized();
+    return app.exec();
 }

@@ -926,7 +926,7 @@ line-height: 20px;
 color: #6B6DA2;</string>
           </property>
           <property name="maxLength">
-           <number>260</number>
+           <number>200</number>
           </property>
           <property name="placeholderText">
            <string>  Nome do arquivo</string>
