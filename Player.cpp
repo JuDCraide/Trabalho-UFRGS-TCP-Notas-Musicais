@@ -10,15 +10,15 @@ void Player::prepararPlayer(string textoOriginal, int instrumentoInicial) {
 }
 
 void Player::tocarMusica() {
-    //string comando = ".\\CFUGUE\\player \""+ sequencia +  "\"";
-    string comando = "start /min D:\\CFUGUE\\player \""+ sequencia +  "\"";
+    string comando = "start /min ./release/CFUGUE/player \""+ sequencia +  "\"";
+    //string comando = "start /min D:\\CFUGUE\\player \""+ sequencia +  "\"";
     system(comando.c_str());
 }
 
 void Player::gerarMidi(string nomeArquivo) {
-    //string caminho = ".\\arquivosMIDI\\";
-    string caminho=".//";
+    string caminho = "./release/arquivosMIDI/";
+    //string caminho=".//";
     nomeArquivo += ".midi";
-    string comando = "start /min D:\\CFUGUE\\midiGenerator \""+ sequencia +  "\" \"" + caminho + nomeArquivo + "\"";
+    string comando = "start /min ./release/CFUGUE/midiGenerator \""+ sequencia +  "\" \"" + caminho + nomeArquivo + "\"";
     system(comando.c_str());
 }

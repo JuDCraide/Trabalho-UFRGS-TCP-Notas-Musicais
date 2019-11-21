@@ -289,6 +289,9 @@ color: #FFFFFF;</string>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="cursor" stdset="0">
+        <cursorShape>IBeamCursor</cursorShape>
+       </property>
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
        </property>
