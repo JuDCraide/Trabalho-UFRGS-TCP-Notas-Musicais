@@ -1,10 +1,6 @@
 <RCC>
-    <qresource prefix="/img">
-        <file>imagens/book-3510326_1920.jpg</file>
-        <file>imagens/Notas MusicaisNotas Musicais.png</file>
-        <file>imagens/Notas MusicaisNotas Musicais2.png</file>
-        <file>imagens/TitleNotas MusicaisNotas Musicais.png</file>
-        <file>imagens/Notas MusicaisNotas Musicais4.png</file>
-        <file>imagens/favicon_created_by_logaster.ico</file>
+    <qresource prefix="/imgs">
+        <file>imagens/favicon.ico</file>
+        <file>imagens/Musicando.png</file>
     </qresource>
 </RCC>

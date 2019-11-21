@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     MainWindow window;
     window.setWindowTitle("Musicando");
-    window.setWindowIcon(QIcon(":/img/imagens/favicon_created_by_logaster.ico"));
+    window.setWindowIcon(QIcon(":/imgs/imagens/favicon.ico"));
     window.showMaximized();
     return app.exec();
 }

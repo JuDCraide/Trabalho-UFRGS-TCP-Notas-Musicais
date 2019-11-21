@@ -24,8 +24,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#MainWindow{
-background-image: url(:/img/imagens/Notas MusicaisNotas Musicais4.png);
-border-image: url(:/img/imagens/Notas MusicaisNotas Musicais4.png) 0 0 0 0 stretch stretch;
+background-image: url(:/imgs/imagens/Musicando.png);
+border-image: url(:/imgs/imagens/Musicando.png) 0 0 0 0 stretch stretch;
 }</string>
   </property>
   <property name="iconSize">
