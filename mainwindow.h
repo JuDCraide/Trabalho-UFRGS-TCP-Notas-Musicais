@@ -30,6 +30,7 @@ private slots:
 
     void showArquivo();
 
+    QString lerArquivo(QString nomeDoArquivo);
 private:
     Ui::MainWindow *ui;
 };

@@ -3,4 +3,7 @@
         <file>imagens/favicon.ico</file>
         <file>imagens/Musicando.png</file>
     </qresource>
+    <qresource prefix="/txt">
+        <file>textos/ajuda.txt</file>
+    </qresource>
 </RCC>

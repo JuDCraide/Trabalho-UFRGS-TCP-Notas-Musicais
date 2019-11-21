@@ -25,7 +25,8 @@ SOURCES += \
     Texto.cpp \
     Volume.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    teladeajuda.cpp
 
 HEADERS += \
     Componente.h \
@@ -36,10 +37,12 @@ HEADERS += \
     Player.h \
     Texto.h \
     Volume.h \
-    mainwindow.h
+    mainwindow.h \
+    teladeajuda.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    teladeajuda.ui
 
 # Default rules for deployment.
 TARGET = TCP

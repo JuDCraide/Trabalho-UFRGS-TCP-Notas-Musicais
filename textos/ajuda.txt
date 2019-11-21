@@ -1,0 +1,24 @@
+<h2>Como eu coloco uma música?<\h2>
+
+R: Clique na caixa de texto e digite o que desejar ou carregue um arquivo texto já existente clicando em “Abrir arquivo”. Ambas as opções podem ser feitas juntas.
+
+
+<h2>O programa não faz nada quando clico em “Gerar e tocar música”, o que eu faço?<\h2>
+
+R: A caixa de texto deve estar preenchida com alguma coisa ou algum arquivo texto deve ser aberto para que o programa possa gerar uma música. Caso esse não seja o problema, por favor reporte o bug através do tópico: “Ocorreu um erro sem explicação, o que eu faço?”.
+
+<h2>Como eu gero um arquivo MIDI?<\h2>
+
+R: Para salvar um arquivo, clique em “Salvar arquivo MIDI da sua música”, escolha um nome para o arquivo, e clique em “Gerar e tocar música”. O arquivo será salvo no Diretório “”. Note que um nome para o arquivo deve ser inserido para que o arquivo seja gerado.
+
+<h2>Posso mudar o instrumento no meio da música?<\h2>
+
+R: A opção do instrumento só pode ser modificada antes de tocar a música. Para mudar o instrumento no meio dela, coloque no texto: “!” para Agogô, “O,o,I,i,U,u”(apenas um destes) para Harpsichord, “NL” para Tubular Bells, “;” para Pan Flute, “,” para Church Organ ou coloque um dígito para que o instrumento seja “dígito” + valor do instrumento atual (ver valores nas opções de instrumento abaixo da caixa de texto). O instrumento desejado deve ser digitado na posição em que ele deve aparecer.
+
+<h2>Ocorreu um erro sem explicação, o que eu faço?<\h2>
+
+R: Por favor reporte o erro para o email “” com o título “Bug-NotasMusicais”. Tente descrever detalhadamente o erro e explicar todas as suas ações até que ele ocorresse. Trabalharemos para que o erro seja resolvido o mais rápido possível.
+
+Caso possua alguma sugestão ou crítica, por favor nos mande para “email”. Adoraríamos ouvi-la!
+
+

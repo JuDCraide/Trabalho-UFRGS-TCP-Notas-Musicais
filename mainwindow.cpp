@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "Player.h"
+#include "teladeajuda.h"
+
 
 #include <bits/stdc++.h>
 #include <QDebug>
@@ -62,31 +64,42 @@ void MainWindow::on_botaoMusica_clicked(){
 }
 
 void MainWindow::on_botaoAjuda_clicked(){
-    QMessageBox::information(this,"Instruções","Para iniciar o uso digite um texto ou abra um arquivo\nEm seguida escolha um timbre inicial, ou deixe no piano padrão\nCaso deseje salvar a música clique no checkbox\nAssim, será possível escolher um nome para o seu arquivo\nEm seguida aperte o botão para Tocar/Gerar e Tocar a música e PRONTO\nAprecie sua música gerada a partir de texto");
+    QString instrucoes = "Para iniciar o uso digite um texto ou abra um arquivo\nEm seguida escolha um timbre inicial, ou deixe no piano padrão\nCaso deseje salvar a música clique no checkbox\nAssim, será possível escolher um nome para o seu arquivo\nEm seguida aperte o botão para Tocar/Gerar e Tocar a música e PRONTO\nAprecie sua música gerada a partir de texto\nSe sua dúvida ainda não foi resolvida clique em Help, para mais informações";
+    QMessageBox::StandardButton resposta;
+    resposta=QMessageBox::information(this,"Instruções",instrucoes,QMessageBox::Ok|QMessageBox::Help);
+    if(resposta==QMessageBox::Help){
+        TelaDeAjuda ajuda;
+        ajuda.setWindowIcon(QIcon(":/imgs/imagens/favicon.ico"));
+        ajuda.setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        ajuda.exec();
+    }
+    //qDebug()<< resposta;
+
 }
 
-QString readFile(QString fileName){
-    QFile file(fileName);
+QString MainWindow::lerArquivo(QString nomeDoArquivo){
+    QFile arquivo(nomeDoArquivo);
 
-    if(!file.open(QFile::ReadOnly | QFile::Text)){
+    if(!arquivo.open(QFile::ReadOnly | QFile::Text)){
         return VAZIO;
     }
-    QTextStream in(&file);
+    QTextStream in(&arquivo);
+    in.setCodec("UTF-8");
 
-    QString text = in.readAll();
-    file.close();
+    QString texto = in.readAll();
+    arquivo.close();
 
-    return text;
+    return texto;
 }
 
 void MainWindow::on_botaoArquivo_clicked(){
     const QString filtro="Arquivos de Texto (*.txt) ;; Todos Arquivos (*.*)";
-    QString file = QFileDialog::getOpenFileName(this,"Abrir Arquivoss","C://",filtro);
-    if(file==VAZIO){
+    QString arquivo = QFileDialog::getOpenFileName(this,"Abrir Arquivoss","C://",filtro);
+    if(arquivo==VAZIO){
         return;
     }
-    QString txtFile = readFile(file);
-    ui->txtOriginal->setPlainText(txtFile);
+    QString arquivoTxt = lerArquivo(arquivo);
+    ui->txtOriginal->setPlainText(arquivoTxt);
 }
 
 void MainWindow::on_gerarMIDI_clicked()
