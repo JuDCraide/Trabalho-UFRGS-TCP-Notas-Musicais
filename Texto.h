@@ -7,7 +7,6 @@ using namespace std;
 
 class Texto {
 public:
-    /** Default constructor */
     Texto();
     Texto(string textoOriginal,int instrumentoInicial);
     void setTexto(string textoOriginal);

@@ -62,8 +62,6 @@ void Musica::atualizaInstrumentoAtual(char instrucao) {
     case '7':
     case '8':
     case '9': {
-
-
         int novo = instrumento.getAtual() + (int)instrucao -48 ;
         if(novo >= INSTRUMENTO_MIN && novo <= INSTRUMENTO_MAX) {
 

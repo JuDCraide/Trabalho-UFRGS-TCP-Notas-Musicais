@@ -12,7 +12,6 @@ public:
     string getTipo();
     void setCodigo(string codigo);
     string getCodigo();
-protected:
 
 private:
     string tipo;

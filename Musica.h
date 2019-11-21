@@ -10,7 +10,6 @@
 
 class Musica {
 public:
-    /** Default constructor */
     Musica(int instrumentoInicial);
 
     bool isInstrumento(char instrucao);
@@ -20,19 +19,16 @@ public:
     void atualizaNotaAtual(char instrucao);
 
     bool isVolume(char instrucao);
-    //void dobrarVolume();
 
     bool isOitava(char instrucao);
-    //void atualizaOitavaAtual()
+
     Instrumento instrumento;
     Oitava oitava;
     Volume volume;
-    map <char, Nota> notasValidas;
     Nota nota;
 
 private:
-
-
+    map <char, Nota> notasValidas;
 };
 
 #endif // MUSICA_H

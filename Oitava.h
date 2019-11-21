@@ -12,9 +12,6 @@ public:
     Oitava();
     void aumentarOitava();
     string getCodigo();
-protected:
-
-private:
 };
 
 #endif // OITAVA_H

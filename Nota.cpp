@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 Nota::Nota(string tipo, string codigo) {
     this->tipo = tipo;
     this->codigo = codigo;
@@ -10,7 +9,6 @@ Nota::Nota(string tipo, string codigo) {
 
 Nota::Nota() {
 }
-
 
 void Nota::setTipo(string tipo) {
     this->tipo = tipo;
