@@ -116,4 +116,6 @@ bool Musica::isOitava(char instrucao) {
     }
 }
 
-
+string Musica::converteNotaAtual(){
+    return (" " + nota.getCodigo() + oitava.getCodigo() + volume.getCodigo());
+}

@@ -26,6 +26,8 @@ public:
 
     bool isOitava(char instrucao);
 
+    string converteNotaAtual();
+
     Instrumento instrumento;
     Oitava oitava;
     Volume volume;

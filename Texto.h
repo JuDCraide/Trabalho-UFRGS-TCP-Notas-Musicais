@@ -7,16 +7,16 @@ using namespace std;
 
 class Texto {
 public:
-    Texto();
+    //Texto();
     Texto(string textoOriginal,int instrumentoInicial);
-    void setTexto(string textoOriginal);
-    void setInstrumentoInicial(int instrumentoInicial);
     void converterTexto();
     string getTextoConvertido();
+    bool anteriorIsNota(unsigned int posicaoAtual);
 
 private:
     string textoOriginal, textoConvertido;
     Musica musica;
+
 };
 
 #endif // TEXTO_H

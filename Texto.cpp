@@ -3,14 +3,7 @@
 Texto::Texto(string textoOriginal, int instrumentoInicial) : musica(instrumentoInicial) {
     this->textoOriginal = textoOriginal;
 }
-/*
-void Texto::setTexto(string textoOriginal) {
-    this->textoOriginal = textoOriginal;
-}
 
-void Texto::setInstrumentoInicial(string textoOriginal) {
-
-}*/
 void Texto::converterTexto() {
 
     textoConvertido = musica.instrumento.getCodigo();
@@ -18,7 +11,7 @@ void Texto::converterTexto() {
     for(unsigned int i = 0; i < textoOriginal.size(); i++) {
         if(musica.isNota(textoOriginal[i])) {
             musica.atualizaNotaAtual(textoOriginal[i]);
-            textoConvertido += (" " + musica.nota.getCodigo() + musica.oitava.getCodigo() + musica.volume.getCodigo()); //verificar
+            textoConvertido += musica.converteNotaAtual();
         }
         else if (musica.isVolume(textoOriginal[i])) {
             musica.volume.dobrarVolume();
@@ -31,8 +24,8 @@ void Texto::converterTexto() {
             musica.oitava.aumentarOitava();
         }
         else {
-            if(i != 0 && musica.isNota(textoOriginal[i - 1])) { //transformar em funcao
-                textoConvertido += (" " + musica.nota.getCodigo() + musica.oitava.getCodigo() + musica.volume.getCodigo());
+            if(anteriorIsNota(i)) {
+                textoConvertido += musica.converteNotaAtual();
             } else {
                 textoConvertido += SILENCIO;
             }
@@ -42,4 +35,11 @@ void Texto::converterTexto() {
 
 string Texto::getTextoConvertido() {
     return textoConvertido;
+}
+
+bool Texto::anteriorIsNota(unsigned int posicaoAtual){
+    if(posicaoAtual != 0){
+        return musica.isNota(textoOriginal[posicaoAtual - 1]);
+    }
+    return false;
 }
