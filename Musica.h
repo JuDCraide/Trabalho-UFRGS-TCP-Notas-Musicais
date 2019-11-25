@@ -7,6 +7,10 @@
 #include "Oitava.h"
 #include "Volume.h"
 #include "Nota.h"
+#include <stdlib.h>
+#include <bits/stdc++.h>
+
+using namespace std;
 
 class Musica {
 public:

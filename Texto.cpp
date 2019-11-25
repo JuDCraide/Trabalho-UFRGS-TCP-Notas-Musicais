@@ -12,19 +12,25 @@ void Texto::setInstrumentoInicial(string textoOriginal) {
 
 }*/
 void Texto::converterTexto() {
+
     textoConvertido = musica.instrumento.getCodigo();
-    for(int i = 0; i < textoOriginal.size(); i++) {
+
+    for(unsigned int i = 0; i < textoOriginal.size(); i++) {
         if(musica.isNota(textoOriginal[i])) {
             musica.atualizaNotaAtual(textoOriginal[i]);
             textoConvertido += (" " + musica.nota.getCodigo() + musica.oitava.getCodigo() + musica.volume.getCodigo()); //verificar
-        } else if (musica.isVolume(textoOriginal[i])) {
+        }
+        else if (musica.isVolume(textoOriginal[i])) {
             musica.volume.dobrarVolume();
-        } else if (musica.isInstrumento(textoOriginal[i])) {
+        }
+        else if (musica.isInstrumento(textoOriginal[i])) {
             musica.atualizaInstrumentoAtual(textoOriginal[i]);
             textoConvertido += musica.instrumento.getCodigo();
-        } else if(musica.isOitava(textoOriginal[i])) {
+        }
+        else if(musica.isOitava(textoOriginal[i])) {
             musica.oitava.aumentarOitava();
-        } else {
+        }
+        else {
             if(i != 0 && musica.isNota(textoOriginal[i - 1])) { //transformar em funcao
                 textoConvertido += (" " + musica.nota.getCodigo() + musica.oitava.getCodigo() + musica.volume.getCodigo());
             } else {
@@ -33,6 +39,7 @@ void Texto::converterTexto() {
         }
     }
 }
+
 string Texto::getTextoConvertido() {
     return textoConvertido;
 }

@@ -2,11 +2,13 @@
     <qresource prefix="/imgs">
         <file>imagens/favicon.ico</file>
         <file>imagens/Musicando.png</file>
+        <file>textos/Instrumentos.txt</file>
     </qresource>
     <qresource prefix="/txt">
         <file>textos/CaixaDeTextoVazia.txt</file>
         <file>textos/NomeDoArquivoVazio.txt</file>
         <file>textos/Ajuda.txt</file>
         <file>textos/Instrucoes.txt</file>
+        <file>textos/Instrumentos.txt</file>
     </qresource>
 </RCC>

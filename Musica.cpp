@@ -39,6 +39,10 @@ bool Musica::isInstrumento(char instrucao) {
     }
 }
 
+int charToInt(char numero){
+    return numero-'0';
+}
+
 void Musica::atualizaInstrumentoAtual(char instrucao) {
     switch(instrucao) {
     case '!':
@@ -62,7 +66,7 @@ void Musica::atualizaInstrumentoAtual(char instrucao) {
     case '7':
     case '8':
     case '9': {
-        int novo = instrumento.getAtual() + (int)instrucao -48 ;
+        int novo = instrumento.getAtual() + charToInt(instrucao) ;
         if(novo >= INSTRUMENTO_MIN && novo <= INSTRUMENTO_MAX) {
 
             instrumento.setAtual(novo);
@@ -111,3 +115,5 @@ bool Musica::isOitava(char instrucao) {
         return false;
     }
 }
+
+

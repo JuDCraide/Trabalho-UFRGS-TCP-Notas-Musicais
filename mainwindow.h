@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #define CODIFICACAO_TEXTUAL "UTF-8"
+#define GENERALMIDISIZE 128
 
 #include <QMainWindow>
 

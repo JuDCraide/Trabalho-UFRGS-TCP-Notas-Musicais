@@ -1,5 +1,7 @@
 #include "Player.h"
 
+const string caminho = "start /min ./release/CFUGUE/";
+
 Player::Player() {
     sequencia="";
 }
@@ -10,15 +12,13 @@ void Player::prepararPlayer(string textoOriginal, int instrumentoInicial) {
 }
 
 void Player::tocarMusica() {
-    string comando = "start /min ./release/CFUGUE/player \""+ sequencia +  "\"";
-    //string comando = "start /min D:\\CFUGUE\\player \""+ sequencia +  "\"";
+    string comando = caminho + "player \""+ sequencia +  "\"";
     system(comando.c_str());
 }
 
 void Player::gerarMidi(string nomeArquivo) {
     string caminho = "./release/arquivosMIDI/";
-    //string caminho=".//";
     nomeArquivo += ".midi";
-    string comando = "start /min ./release/CFUGUE/midiGenerator \""+ sequencia +  "\" \"" + caminho + nomeArquivo + "\"";
+    string comando = caminho + "midiGenerator \""+ sequencia +  "\" \"" + caminho + nomeArquivo + "\"";
     system(comando.c_str());
 }
