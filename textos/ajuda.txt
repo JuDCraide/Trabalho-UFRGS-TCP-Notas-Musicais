@@ -1,8 +1,8 @@
- Como eu coloco uma música? 
+ Como eu coloco uma música?
 
 R: Clique na caixa de texto e digite o que desejar ou carregue um arquivo texto já existente clicando em “Abrir arquivo”. Ambas as opções podem ser feitas juntas, ou seja você pode abrir um arquivo e editá-lo. Além disso, para ver a tabela usada na conversão vá para a última pergunta.
 
- O programa não faz nada quando clico em “Tocar música”, o que eu faço? 
+ O programa não faz nada quando clico em “Tocar música”, o que eu faço?
 
 R: Certifique-se de que a caixa de texto está preenchida com alguma coisa ou algum arquivo texto foi aberto para que o programa possa gerar uma música.
 
@@ -10,73 +10,67 @@ Como eu seleciono um instrumento inicial?
 
 R:Apenas clique na caixa de listagem e selecione um dos 128 instrumentos disponíveis pelo General MIDI.
 
- Como eu gero um arquivo MIDI? 
+ Como eu gero um arquivo MIDI?
 
 R: Para salvar um arquivo, selecione “Salvar arquivo MIDI da sua música”, escolha um nome para o arquivo, e clique em “Gerar e tocar música”. O arquivo será salvo no Diretório “”. Note que um nome para o arquivo deve ser inserido para que o arquivo seja gerado.
 
-O programa não faz nada quando clico em “Gerar e tocar música”, o que eu faço? 
+O programa não faz nada quando clico em “Gerar e tocar música”, o que eu faço?
 
 R: Certifique-se de que o nome do arquivo está preenchido com alguma coisa.
 
- Posso mudar o instrumento no meio da música? 
+ Posso mudar o instrumento no meio da música?
 
 R: A opção do instrumento só pode ser modificada antes de tocar a música. Mudar o instrumento no meio dela depende dos caracteres digitados no texto, para ver a tabela usada na conversão vá para a última pergunta.
 
- Ocorreu um erro sem explicação, o que eu faço? 
+ Ocorreu um erro sem explicação, o que eu faço?
 
 R: Por favor reporte o erro no github do projeto “https://github.com/JuDCraide/Trabalho-UFRGS-TCP-Notas-Musicais”. . Tente descrever detalhadamente o erro e explicar todas as suas ações até que ele ocorresse. Trabalharemos para que o erro seja resolvido o mais rápido possível.
 
 Qual a tabela de conversão usada para transformar meu texto em música?
 
-R: 	Texto 			Informação Musical ou Ação
+R:	Texto					Informação Musical ou Ação
+A						Nota Lá
+        B						Nota Si
+        C						Nota Dó
+        D						Nota Ré
+        E						Nota Mi
+        F						Nota Fá
+        G						Nota Sol
 
-	A			Nota Lá
-	B			Nota Si
-	C			Nota Dó
-	D			Nota Ré
-	E			Nota Mi
-	F			Nota Fá
-	G			Nota Sol
+        a,b,c,d,e,f,g				Se caractere anterior era NOTA(A a G), repete
+        (minúsculas)			nota; Caso contrário, silêncio ou pausa
 
-	a,b,c,d,e,f,g 		Se caractere anterior era NOTA(A a G), repete
-	(minúsculas)		nota; Caso contrário, silêncio ou pausa
+Caractere Espaço		Aumenta volume para o DOBRO do volume; Se não
+                                                        puder, volta ao volume default (de início)
 
-	Caractere Espaço	Aumenta volume para o DOBRO do volume; Se não 
-				puder, volta ao volume default (de início)	
+        Caractere ! (ponto		Trocar instrumento para o instrumento General
+        de exclamação)			MIDI #7 (Harpsichord)
 
-	Caractere ! (ponto de	Trocar instrumento para o instrumento General
-	exclamação)		MIDI #7 (Harpsichord)
+        Qualquer outra vogal	Trocar instrumento para o instrumento General
+        (O, o, I, i , U ou u)		MIDI #7 (Harpsichord)
 
-	Qualquer outra vogal 	Trocar instrumento para o instrumento General
-	(O, o, I, i , U ou u) 	MIDI #7 (Harpsichord)
+        Qualquer outra letra	Se caractere anterior era NOTA (A a G), repete
+        consoante				nota; Caso contrário, silêncio ou pausa
 
-	Qualquer outra letra 	Se caractere anterior era NOTA (A a G), repete
-	consoante		nota; Caso contrário, silêncio ou pausa
+        Dígito par ou impar		Trocar instrumento para o instrumento General
+        (número 0 a 9)			MIDI cujo numero é igual ao valor do instrumento
+                                                        ATUAL + valor do dígito
 
-	Dígito par ou impar 	Trocar instrumento para o instrumento General 
-	(número 0 a 9)		MIDI cujo numero é igual ao valor do instrumento
-				ATUAL + valor do dígito
+        Caractere ? (ponto		Aumenta UMA oitava; Se não puder aumentar,
+        de interrogação) e		volta à oitava default (de início)
+        caracter . (ponto)
 
-	Caractere ? (ponto 	Aumenta UMA oitava; Se não puder aumentar,  
-	de interrogação) e 	volta à oitava default (de início)
-	caracter . (ponto)		
+        Caractere NL			Trocar instrumento para o instrumento General
+        (nova linha)				MIDI #15 (Tubular Bells)
 
-	Caractere NL 		Trocar instrumento para o instrumento General 
-	(nova linha) 		MIDI #15 (Tubular Bells)
+        Caractere ;				Trocar instrumento para o instrumento General
+        (ponto e vírgula)		MIDI #76 (Pan Flute)
 
-	Caractere ; 		Trocar instrumento para o instrumento General 
-	(ponto e vírgula) 	MIDI #76 (Pan Flute)
+        Caractere , (vírgula)	Trocar instrumento para o instrumento General
+                                                        MIDI #20 (Church Organ)
 
-	Caractere , (vírgula) 	Trocar instrumento para o instrumento General 
-				MIDI #20 (Church Organ)
+ELSE (nenhum dos		Se caractere anterior era NOTA (A a G), repete
+        anteriores)				nota; Caso contrário, silêncio ou pausa
 
-	ELSE (nenhum dos 	Se caractere anterior era NOTA (A a G), repete
-anteriores)		 nota; Caso contrário, silêncio ou pausa
-
-Caso possua alguma sugestão ou crítica, por favor poste no github do projeto “https://github.com/JuDCraide/Trabalho-UFRGS-TCP-Notas-Musicais”. 
+Caso possua alguma sugestão ou crítica, por favor poste no github do projeto “https://github.com/JuDCraide/Trabalho-UFRGS-TCP-Notas-Musicais”.
 Adoraríamos ouvir sua opinião!
-
-
-
-
-

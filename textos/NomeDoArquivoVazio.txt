@@ -1,0 +1,2 @@
+Não foi possível tocar a música!
+O nome do arquivo não pode ser deixado vazio, quando a opção de gerar MIDI estiver selecionada.

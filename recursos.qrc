@@ -4,6 +4,9 @@
         <file>imagens/Musicando.png</file>
     </qresource>
     <qresource prefix="/txt">
-        <file>textos/ajuda.txt</file>
+        <file>textos/CaixaDeTextoVazia.txt</file>
+        <file>textos/NomeDoArquivoVazio.txt</file>
+        <file>textos/Ajuda.txt</file>
+        <file>textos/Instrucoes.txt</file>
     </qresource>
 </RCC>

@@ -1,0 +1,7 @@
+Para iniciar o uso digite um texto ou abra um arquivo
+Em seguida escolha um timbre inicial, ou deixe no piano padrão
+Caso deseje salvar a música clique no checkbox
+Assim, será possível escolher um nome para o seu arquivo
+Em seguida aperte o botão para Tocar/Gerar e Tocar a música e PRONTO
+Aprecie sua música gerada a partir de texto
+Se sua dúvida ainda não foi resolvida clique em Help, para mais informações

@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#define CODIFICACAO_TEXTUAL "UTF-8"
+
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -31,6 +33,9 @@ private slots:
     void showArquivo();
 
     QString lerArquivo(QString nomeDoArquivo);
+
+    void mensagemDeErro(QString nomeDoArquivo);
+
 private:
     Ui::MainWindow *ui;
 };

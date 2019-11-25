@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QString>
 #include <QTextStream>
+#include <QDebug>
 #define VAZIO ""
 
 TelaDeAjuda::TelaDeAjuda(QWidget *parent) :
@@ -10,7 +11,7 @@ TelaDeAjuda::TelaDeAjuda(QWidget *parent) :
     ui(new Ui::TelaDeAjuda)
 {
     ui->setupUi(this);
-    QString ajuda=lerArquivo(":/txt/textos/ajuda.txt");
+    QString ajuda=lerArquivo(":/txt/textos/Ajuda.txt");
     ui->textBrowser->setText(ajuda);
 }
 
@@ -30,6 +31,5 @@ QString TelaDeAjuda::lerArquivo(QString nomeDoArquivo){
 
     QString texto = in.readAll();
     arquivo.close();
-
     return texto;
 }

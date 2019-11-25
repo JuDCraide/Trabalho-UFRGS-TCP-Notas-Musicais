@@ -3,7 +3,6 @@
 #include "Player.h"
 #include "teladeajuda.h"
 
-
 #include <bits/stdc++.h>
 #include <QDebug>
 #include <QFile>
@@ -41,39 +40,38 @@ void MainWindow::inicializaTimbres(){
 void MainWindow::on_botaoMusica_clicked(){
     Player player;
     std::string texto = ui->txtOriginal->toPlainText().toStdString();
-    //std::cout<<texto;
-    if(texto==VAZIO){
-        QMessageBox::critical(this,"Não foi possível tocar a música","O campo de texto não pode ser deixado vazio.");
-        return;
-    }
     int indexTimbre = ui->selecionarTimbre->currentIndex();
-    //qDebug() << indexTimbre;
-    player.prepararPlayer(texto,indexTimbre);
-    qDebug()<<"preparou";
-    player.tocarMusica();
-    qDebug()<<"tocou";
-    if(ui->gerarMIDI->isChecked()){
-        std::string arquivo = ui->nomeArquivo->text().toStdString();
-        if(arquivo==VAZIO){
-            QMessageBox::critical(this,"Não foi possível tocar a música","O nome do arquivo não pode ser deixado vazio,\nquando a opção de gerar MIDI estiver selecionada");
-            return;
-        }else{
-            player.gerarMidi(arquivo);
+
+    if(texto==VAZIO){
+        mensagemDeErro(":/txt/textos/CaixaDeTextoVazia.txt");
+    } else {
+
+        player.prepararPlayer(texto,indexTimbre);
+        player.tocarMusica();
+
+        if(ui->gerarMIDI->isChecked()){
+            std::string arquivo = ui->nomeArquivo->text().toStdString();
+            if(arquivo==VAZIO){
+                mensagemDeErro(":/txt/textos/NomeDoArquivoVazio.txt");
+            }else{
+                player.gerarMidi(arquivo);
+            }
         }
     }
 }
 
 void MainWindow::on_botaoAjuda_clicked(){
-    QString instrucoes = "Para iniciar o uso digite um texto ou abra um arquivo\nEm seguida escolha um timbre inicial, ou deixe no piano padrão\nCaso deseje salvar a música clique no checkbox\nAssim, será possível escolher um nome para o seu arquivo\nEm seguida aperte o botão para Tocar/Gerar e Tocar a música e PRONTO\nAprecie sua música gerada a partir de texto\nSe sua dúvida ainda não foi resolvida clique em Help, para mais informações";
+
+    QString instrucoes = lerArquivo(":/txt/textos/Instrucoes.txt");
     QMessageBox::StandardButton resposta;
-    resposta=QMessageBox::information(this,"Instruções",instrucoes,QMessageBox::Ok|QMessageBox::Help);
+    resposta = QMessageBox::information(this,"Instruções",instrucoes,QMessageBox::Ok|QMessageBox::Help);
+
     if(resposta==QMessageBox::Help){
         TelaDeAjuda ajuda;
         ajuda.setWindowIcon(QIcon(":/imgs/imagens/favicon.ico"));
         ajuda.setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
         ajuda.exec();
     }
-    //qDebug()<< resposta;
 
 }
 
@@ -84,7 +82,7 @@ QString MainWindow::lerArquivo(QString nomeDoArquivo){
         return VAZIO;
     }
     QTextStream in(&arquivo);
-    in.setCodec("UTF-8");
+    in.setCodec(CODIFICACAO_TEXTUAL);
 
     QString texto = in.readAll();
     arquivo.close();
@@ -121,4 +119,18 @@ void MainWindow::showArquivo(){
     ui->nomeArquivo->show();
     ui->lableDigiteNome->show();
     ui->botaoMusica->setText("Gerar e Tocar Música");
+}
+
+void MainWindow::mensagemDeErro(QString nomeDoArquivo){
+    QString titulo="Um erro ocorreu", mensagem="Mensagem de erro inacessível";
+
+    QStringList conteudo=lerArquivo(nomeDoArquivo).split('\n');
+    if (conteudo.size()>=2){
+        titulo=conteudo.at(0);
+        mensagem=conteudo.at(1);
+    }
+    qDebug()<<titulo;
+    qDebug()<<mensagem;
+    QMessageBox::critical(this,titulo,mensagem);
+    //QMessageBox::critical(this,"Não foi possível tocar a música","O nome do arquivo não pode ser deixado vazio,\nquando a opção de gerar MIDI estiver selecionada");
 }
