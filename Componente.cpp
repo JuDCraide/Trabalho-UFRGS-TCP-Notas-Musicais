@@ -4,6 +4,8 @@ Componente::Componente() {
     codigo = "";
 }
 
+Componente::~Componente() {}
+
 string Componente::getCodigo() {
     return codigo;
 }
@@ -11,6 +13,7 @@ string Componente::getCodigo() {
 void Componente::setAtual(int novo) {
     atual = novo;
 }
+
 int Componente::getAtual() {
     return atual;
 }
