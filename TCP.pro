@@ -52,3 +52,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     recursos.qrc
+
+DISTFILES += \
+    CFUGUE/midiGenerator.exe \
+    CFUGUE/player.exe \
+    CFUGUE/temp.txt
