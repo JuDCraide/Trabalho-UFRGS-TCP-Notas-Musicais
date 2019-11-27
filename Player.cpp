@@ -1,6 +1,6 @@
 #include "Player.h"
 
-const string caminho = "./release/CFUGUE/";
+const string caminho = "./CFUGUE/";
 const string opcao= "start /min ";
 
 Player::Player() {
