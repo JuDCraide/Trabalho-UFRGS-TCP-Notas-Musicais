@@ -51,21 +51,24 @@ void MainWindow::on_botaoMusica_clicked(){
 
     if(texto==VAZIO){
         mensagemDeErro(":/txt/textos/CaixaDeTextoVazia.txt");
-    } else {
 
+    } else if(ui->gerarMIDI->isChecked()){
+
+        std::string arquivo = ui->nomeArquivo->text().toStdString();
+        if(arquivo==VAZIO){
+            mensagemDeErro(":/txt/textos/NomeDoArquivoVazio.txt");
+        }else{
+            player.prepararPlayer(texto,indexTimbre);
+            player.gerarMidi(arquivo);
+            player.tocarMusica();
+        }
+
+    }else{
         player.prepararPlayer(texto,indexTimbre);
         player.tocarMusica();
-
-        if(ui->gerarMIDI->isChecked()){
-            std::string arquivo = ui->nomeArquivo->text().toStdString();
-            if(arquivo==VAZIO){
-                mensagemDeErro(":/txt/textos/NomeDoArquivoVazio.txt");
-            }else{
-                player.gerarMidi(arquivo);
-            }
-        }
     }
 }
+
 
 void MainWindow::on_botaoAjuda_clicked(){
 
@@ -129,12 +132,14 @@ void MainWindow::showArquivo(){
 }
 
 void MainWindow::mensagemDeErro(QString nomeDoArquivo){
+    const int tamanhoMinimo=2, primeiraLinha=0,segundaLinha=1;
+
     QString titulo="Um erro ocorreu", mensagem="Certifique-se que nenhum campo está vazio";
 
     QStringList conteudo=lerArquivo(nomeDoArquivo).split('\n');
-    if (conteudo.size()>=2){
-        titulo=conteudo.at(0);
-        mensagem=conteudo.at(1);
+    if (conteudo.size()>=tamanhoMinimo){
+        titulo=conteudo.at(primeiraLinha);
+        mensagem=conteudo.at(segundaLinha);
     }
 
     QMessageBox::critical(this,titulo,mensagem);
